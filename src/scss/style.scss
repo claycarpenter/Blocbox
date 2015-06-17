@@ -66,3 +66,120 @@ p {
     min-height: 1px;
     margin: 0 2% 20px;
 }
+
+header {
+    $header-bg: #34495E;
+    $header-text: #FFFFFF;
+    
+    color: $header-text;
+    background: $header-bg;
+
+    $grad-light: lighten(desaturate($header-bg, 2%), 21%);
+    background-image: linear-gradient(206deg, $grad-light 0%, $header-bg 94%);
+    
+    nav {
+        padding: 1em 0;
+        
+        ul {
+            display: inline;
+            text-align: right;
+            float: right;
+            margin: 0;
+            
+            & > li {
+                list-style-type: none;
+                display: inline-block;
+                margin: 0 15px;
+                
+                &.btn-outline {
+                    padding: 10px 15px;
+                    border: 2px solid $header-text;
+                    border-radius: 4px;
+                    
+                    &:hover {
+                        background: $header-text;
+                        
+                        & > a {
+                            color: $header-bg;
+                        }
+                    }
+                }
+                
+                & > a {
+                    color: $header-text;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}
+
+.hero {
+    text-align: center;
+    display: block;
+    position: relative;
+    
+    h1 {
+        font-size: 48px;
+        font-weight: normal;
+        margin: 95px 0 0;
+    }
+    
+    p {
+        font-size: 22px;
+        line-height: 26px;
+        font-weight: 100;
+        margin: 10px 0 40px;
+    }
+    
+    img {
+        display: block;
+        margin: 3em auto 0;
+    }
+}
+
+.btn {
+    $btn-bg: #2ECC71;
+    
+    color: #FFFFFF;
+    font-weight: 700;
+    text-decoration: none;
+    padding: 10px 30px;
+    background: $btn-bg;
+    
+    border-radius: 4px;
+    border: 2px solid $btn-bg; 
+    
+    $btn-shadow: darken($btn-bg, 15%);
+    box-shadow: 0 2px 0 0 $btn-shadow;
+}
+
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+    
+    .one-half {
+        width: 46%;
+    }
+    
+    .one-third {
+        width: 29.33333%;
+    }
+    
+    .one-fourth {
+        width: 21%;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}
