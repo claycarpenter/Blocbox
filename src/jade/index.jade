@@ -5,13 +5,13 @@ html(lang='en-us')
         meta(http-equiv='X-UA-Compatible', content='IE=Edge')
         meta(name='viewport', content='width=device-width, initial-scale=1')
         meta(charset='UTF-8')
-        
+
         title Save, share and collaborate | Blocbox
-        
+
         link(href='http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic|Varela+Round' rel='stylesheet', type='text/css')
-        
+
         link(href='css/style.css', rel='stylesheet', type='text/css')
-        
+
     body
         // Hero
         header
@@ -32,28 +32,31 @@ html(lang='en-us')
                 p blocbox lets you collect and sort information.<br/>Create simple notes, store images, and add links.
                 a.btn(href='signup.html') Start Your Free Trial!
                 img(src='images/dashboard-screenshot.png', alt='Blocbox')
-        
+
         main(role='main')
-            
+
             // Benefits
             section.benefits
                 ul.container
                     li.one-third
+                        i.fa.fa-file-o
                         h2 Create notes
                         p Using Markdown, you can create simple text-based documents to save and share. You can collaborate with others to write and edit content.
                     li.one-third
+                        i.fa.fa-picture-o
                         h2 Create notes
                         p Are there images you find interesting enough to save? Now you have a way to organize and store those within blocbox.
                     li.one-third
+                        i.fa.fa-link
                         h2 Create notes
                         p Forget bookmarking sites in your browser. With blocbox, you can add links, group them and view them from any computer.
-            
+
             // Pricing
             section.pricing
               .container
                 h2 How much does blocbox cost?
                 p
-                  | We have many options to fit your needs. It's free to try for 30 days*, and you can always change your plan once you signed up. 
+                  | We have many options to fit your needs. It's free to try for 30 days*, and you can always change your plan once you signed up.
                   br
                   | Here are the different features of each plan:
               ul.container
@@ -72,8 +75,8 @@ html(lang='en-us')
                   .box.middle
                     h3 Professional
                     h4
-                      span $
-                      | 5 
+                      span.currency-mark $
+                      | 5
                       span.month /month
                     ul
                       li Unlimited boxes
@@ -87,8 +90,8 @@ html(lang='en-us')
                   .box
                     h3 Expert
                     h4
-                      span $
-                      | 10 
+                      span.currency-mark $
+                      | 10
                       span.month /month
                     ul
                       li Unlimited boxes
@@ -98,6 +101,9 @@ html(lang='en-us')
                         |  storage
                       li Real-time collaboration
                     a.btn(href='signup.html') Start Your Free Trial!
+              .container
+                p.small
+                    | *We will not collect your credit card information until your 30-day trial has ended.
 
             // Testimonials
             section.testimonials
@@ -143,9 +149,9 @@ html(lang='en-us')
         footer
             .container.footer-nav-block
                 .left-footer-block.one-third
-                    p.copyright-block 
+                    p.copyright-block
                         | &copy; 2015. <strong>Blocbox</strong> - All Rights Reserved.
-                        
+
                 nav.link-block.middle-footer-block.one-third
                     ul
                         li
@@ -162,7 +168,6 @@ html(lang='en-us')
                         | /
                         li
                             a(href="#") Twitter
-                            
+
                 .right-footer-block.one-third
                     img.logo(src='images/site-logo.png', alt='Blocbox')
-                    

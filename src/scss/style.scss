@@ -3,6 +3,10 @@
 @import "normalize";
 @import "font-awesome";
 
+$dark-blue: #34495E;
+$med-blue: #3498DB;
+$white: #FFFFFF;
+
 html, body {
     overflow-x: hidden;
 }
@@ -36,21 +40,21 @@ p {
 // Grid
 .container {
     $container-padding: 15px;
-    
+
     margin-right: auto;
     margin-left: auto;
-    
+
     padding-left: $container-padding;
     padding-right: $container-padding;
-    
+
     position: relative;
-    
-    &:before, 
+
+    &:before,
     &:after {
         content: ' ';
         display: table;
     }
-    
+
     &:after {
         clear: both;
     }
@@ -68,43 +72,43 @@ p {
 }
 
 header {
-    $header-bg: #34495E;
-    $header-text: #FFFFFF;
-    
+    $header-bg: $dark-blue;
+    $header-text: $white;
+
     color: $header-text;
     background: $header-bg;
 
     $grad-light: lighten(desaturate($header-bg, 2%), 21%);
     background-image: linear-gradient(206deg, $grad-light 0%, $header-bg 94%);
-    
+
     nav {
         padding: 1em 0;
-        
+
         ul {
             display: inline;
             text-align: right;
             float: right;
             margin: 0;
-            
+
             & > li {
                 list-style-type: none;
                 display: inline-block;
                 margin: 0 15px;
-                
+
                 &.btn-outline {
                     padding: 10px 15px;
                     border: 2px solid $header-text;
                     border-radius: 4px;
-                    
+
                     &:hover {
                         background: $header-text;
-                        
+
                         & > a {
                             color: $header-bg;
                         }
                     }
                 }
-                
+
                 & > a {
                     color: $header-text;
                     text-decoration: none;
@@ -118,20 +122,20 @@ header {
     text-align: center;
     display: block;
     position: relative;
-    
+
     h1 {
         font-size: 48px;
         font-weight: normal;
         margin: 95px 0 0;
     }
-    
+
     p {
         font-size: 22px;
         line-height: 26px;
         font-weight: 100;
         margin: 10px 0 40px;
     }
-    
+
     img {
         display: block;
         margin: 3em auto 0;
@@ -140,18 +144,191 @@ header {
 
 .btn {
     $btn-bg: #2ECC71;
-    
-    color: #FFFFFF;
+
+    color: $white;
     font-weight: 700;
     text-decoration: none;
     padding: 10px 30px;
     background: $btn-bg;
-    
+
     border-radius: 4px;
-    border: 2px solid $btn-bg; 
-    
+    border: 2px solid $btn-bg;
+
     $btn-shadow: darken($btn-bg, 15%);
     box-shadow: 0 2px 0 0 $btn-shadow;
+}
+
+.benefits {
+    text-align: center;
+    display: block;
+    position: relative;
+
+    ul {
+        margin: 0 auto;
+        padding: 4em 0;
+
+        li {
+            list-style-type: none;
+            display: inline-block;
+        }
+    }
+
+    i {
+        color: $med-blue;
+        font-size: 60px;
+        margin: 0;
+        vertical-align: middle;
+    }
+
+    h2 {
+        color: $med-blue;
+    }
+}
+
+.pricing {
+    background:
+        url('../images/pricing-background.png') top center no-repeat,
+        linear-gradient(206deg, #5F81A3 0%, $dark-blue 94%);
+    background-size: cover;
+    text-align: center;
+    padding: 4em 0;
+
+    h2, p {
+        color: $white;
+    }
+
+    ul {
+        margin: 0 auto;
+        padding: 2em 0;
+
+        li {
+            list-style-type: none;
+        }
+    }
+
+    .box {
+        padding: 0 15px 15px;
+        background: $white;
+        box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);
+        min-height: 439px;
+        position: relative;
+        margin-top: 25px;
+
+        &.middle {
+            min-height: 485px;
+            margin-top: 0px;
+        }
+
+        h3 {
+            font-family: "Lato", Helvetica, Arial, sans-serif;
+            font-weight: 600;
+            text-transform: uppercase;
+            background: #E2E2E2;
+            box-shadow: 0 1px 2px 0 rgba(0,0,0,0.4);
+//            left: 0;
+//            right: 0;
+//            top: 0;
+            text-align: center;
+            margin: 0 -15px 40px;
+            padding: 10px 0;
+        }
+
+        h4 {
+            font-size: 50px;
+            font-weight: normal;
+            margin: 40px 0 10px;
+            color: $med-blue;
+
+            span {
+                font-size: 24px;
+                vertical-align: top;
+
+                &.currency-mark {
+                    position: relative;
+                    top: 5px;
+                }
+
+                &.month {
+                    font-family: "Lato", Helvetica, Arial, sans-serif;
+                    font-weight: 100;
+                    color: #888888;
+                    font-size: 20px;
+                    vertical-align: middle;
+                }
+            }
+        }
+
+        ul li {
+            font-size: 18px;
+            margin-bottom: 20px;
+            font-weight: 100;
+        }
+
+        .btn {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            right: 20px;
+        }
+    }
+}
+
+.testimonials {
+    padding: 4em 0;
+    text-align: center;
+
+    h2 {
+        color: $med-blue;
+    }
+
+    ul li {
+        list-style-type: none;
+    }
+
+    blockquote {
+        position: relative;
+
+        color: $white;
+        background: $dark-blue;
+        font-style: italic;
+        text-align: left;
+        padding: 30px;
+        width: auto;
+        margin: 0;
+
+        &:after {
+            top: 100%;
+            left: 13%;
+            border: solid transparent;
+            content: " ";
+            height: 0;
+            width: 0;
+            position: absolute;
+            pointer-events: none;
+            border-top-color: #34495E;
+            border-width: 10px;
+            margin-left: -10px;
+        }
+    }
+
+    img {
+        $img-size: 65px;
+        height: $img-size;
+        width: $img-size;
+
+        border-radius: 50%;
+        float: left;
+        display: inline-block;
+        margin: 20px 10px 0 0;
+    }
+
+    p.name {
+        float: left;
+        display: inline-block;
+        text-align: left;
+        font-size: 13px;
+        margin-top: 30px;
+    }
 }
 
 @media (min-width: 768px) {
@@ -164,15 +341,15 @@ header {
     .container {
         width: 970px;
     }
-    
+
     .one-half {
         width: 46%;
     }
-    
+
     .one-third {
         width: 29.33333%;
     }
-    
+
     .one-fourth {
         width: 21%;
     }
