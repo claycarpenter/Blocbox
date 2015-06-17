@@ -18,7 +18,8 @@ var gulp = require('gulp'),
     sass = require('gulp-sass'),
     filter = require('gulp-filter'),
     concat = require('gulp-concat'),
-    jade = require('gulp-jade');
+    jade = require('gulp-jade'),
+    del = require('del');
 
 var browserSyncConfig = {
     server: {
@@ -30,6 +31,10 @@ var browserSyncConfig = {
         projectPaths.outputRoot + '/js/*.js'
     ]
 };
+
+gulp.task('clean', function (cb) {
+   del(['output'], cb);
+});
 
 gulp.task('sass', function() {
    return gulp.src(projectPaths.sources.scss)
@@ -75,6 +80,10 @@ gulp.task('watch', function() {
 });
 
 gulp.task('build', ['sass', 'jade-compile', 'copy-static']);
+
+gulp.task('clean-build', ['clean'], function () {
+    gulp.start('build');
+});
 
 gulp.task('default', 
     ['build', 'browser-sync', 'watch']);
