@@ -59,11 +59,11 @@ gulp.task('copy-static', function() {
     // Copy html
    gulp.src(projectPaths.sources.html)
         .pipe(gulp.dest(projectPaths.outputRoot));
-    
+
     // Copy images
    gulp.src(projectPaths.sources.images)
         .pipe(gulp.dest(projectPaths.outputRoot + '/images'));
-    
+
     // Copy fonts
    gulp.src(projectPaths.sources.fonts)
         .pipe(gulp.dest(projectPaths.outputRoot + '/fonts'));
@@ -73,17 +73,21 @@ gulp.task('watch', function() {
     gulp.watch(projectPaths.sources.scss, ['sass']);
 
     gulp.watch(projectPaths.sources.jade, ['jade-compile']);
-    
-    gulp.watch(projectPaths.sources.html, ['copy-static']);
-    
-    gulp.watch(projectPaths.sources.images, ['copy-image']);
+
+    gulp.watch(
+        [projectPaths.sources.html, projectPaths.sources.images],
+        ['copy-static']);
 });
 
 gulp.task('build', ['sass', 'jade-compile', 'copy-static']);
 
 gulp.task('clean-build', ['clean'], function () {
+    // Start build after clean is complete.
     gulp.start('build');
 });
 
-gulp.task('default', 
-    ['clean-build', 'browser-sync', 'watch']);
+gulp.task('default', ['clean-build'], function() {
+    // Start browserSync, watch tasks after clean build is complete.
+    gulp.start('browser-sync');
+    gulp.start('watch')
+});
