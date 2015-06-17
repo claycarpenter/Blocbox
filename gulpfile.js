@@ -5,7 +5,8 @@ var projectPaths = {
         scss: 'src/scss/**/*.scss',
         html: 'src/html/**/*.html',
         images: 'src/images/**/*',
-        jade: 'src/jade/**/*.jade'
+        jade: 'src/jade/**/*.jade',
+        fonts: 'src/fonts/**/*'
     },
     outputRoot: 'output'
 };
@@ -48,14 +49,19 @@ gulp.task('jade-compile', function () {
         .pipe(gulp.dest(projectPaths.outputRoot));
 });
 
-gulp.task('copy-html', function() {
+// TODO: This should probably just use a single static folder...
+gulp.task('copy-static', function() {
+    // Copy html
    gulp.src(projectPaths.sources.html)
         .pipe(gulp.dest(projectPaths.outputRoot));
-});
-
-gulp.task('copy-image', function() {
+    
+    // Copy images
    gulp.src(projectPaths.sources.images)
         .pipe(gulp.dest(projectPaths.outputRoot + '/images'));
+    
+    // Copy fonts
+   gulp.src(projectPaths.sources.fonts)
+        .pipe(gulp.dest(projectPaths.outputRoot + '/fonts'));
 });
 
 gulp.task('watch', function() {
@@ -63,12 +69,12 @@ gulp.task('watch', function() {
 
     gulp.watch(projectPaths.sources.jade, ['jade-compile']);
     
-    gulp.watch(projectPaths.sources.html, ['copy-html']);
+    gulp.watch(projectPaths.sources.html, ['copy-static']);
     
     gulp.watch(projectPaths.sources.images, ['copy-image']);
 });
 
-gulp.task('build', ['sass', 'jade-compile', 'copy-html', 'copy-image']);
+gulp.task('build', ['sass', 'jade-compile', 'copy-static']);
 
 gulp.task('default', 
     ['build', 'browser-sync', 'watch']);
