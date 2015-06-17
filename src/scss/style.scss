@@ -283,6 +283,10 @@ header {
 
     ul li {
         list-style-type: none;
+
+        &.stagger {
+            margin-top: 20px;
+        }
     }
 
     blockquote {
