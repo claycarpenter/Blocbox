@@ -86,4 +86,4 @@ gulp.task('clean-build', ['clean'], function () {
 });
 
 gulp.task('default', 
-    ['build', 'browser-sync', 'watch']);
+    ['clean-build', 'browser-sync', 'watch']);
