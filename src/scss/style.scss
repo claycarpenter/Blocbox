@@ -183,3 +183,22 @@ header {
         width: 1170px;
     }
 }
+
+@media (min-width: 1900px) {
+    .hero {
+        h1 {
+            font-size: 72px;
+            margin: .5em 0;
+        }
+        
+        p {
+            font-size: 40px;
+            line-height: 130%;
+            margin-bottom: 1.5em;
+        }
+        
+        .btn {
+            font-size: 32px;
+        }
+    }
+}
