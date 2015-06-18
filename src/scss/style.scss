@@ -445,12 +445,13 @@ footer {
         transition: all 0.3s ease-in-out;
         transform: translate(-280px, 0);
 
+        z-index: 100;
+
         &.open {
             display: block;
             width: 280px;
             transition: all 0.3s ease-in-out;
             transform: translate(0,0);
-            z-index: 100;
         }
 
         .site-logo {
