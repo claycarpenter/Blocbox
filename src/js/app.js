@@ -1,9 +1,6 @@
 $(document).ready(function () {
-    // Add Item dropdown menu.
+    // Enable dropdown menus.
     $('.menu').dropit();
-
-    // Account settings dropdown menu.
-    $('.pop-north').dropit();
 
     // Small-screen nav menu.
     $('#smallNav').click(function () {
