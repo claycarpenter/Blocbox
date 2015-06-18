@@ -6,7 +6,8 @@ var projectPaths = {
         html: 'src/html/**/*.html',
         images: 'src/images/**/*',
         jade: 'src/jade/**/*.jade',
-        fonts: 'src/fonts/**/*'
+        fonts: 'src/fonts/**/*',
+        scripts: 'src/js/**/*'
     },
     outputRoot: 'output'
 };
@@ -67,6 +68,10 @@ gulp.task('copy-static', function() {
     // Copy fonts
    gulp.src(projectPaths.sources.fonts)
         .pipe(gulp.dest(projectPaths.outputRoot + '/fonts'));
+
+    // Copy JS
+   gulp.src(projectPaths.sources.scripts)
+        .pipe(gulp.dest(projectPaths.outputRoot + '/js'));
 });
 
 gulp.task('watch', function() {
