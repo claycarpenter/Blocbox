@@ -447,7 +447,7 @@ footer {
 
         &.open {
             display: block;
-            width:280px;
+            width: 280px;
             transition: all 0.3s ease-in-out;
             transform: translate(0,0);
             z-index: 100;
@@ -510,17 +510,19 @@ footer {
                 border-radius: 50%;
                 margin-left: 10px;
                 display: inline-block;
+                float: left;
             }
 
             p {
                 display: inline-block;
+                float: left;
                 vertical-align: top;
                 padding-top: 8px;
                 font-weight: 400;
                 margin: 0 0 0 10px;
             }
 
-            a {
+            .settings-btn {
                 color: $white;
                 text-decoration: none;
                 text-align: right;
@@ -624,10 +626,6 @@ footer {
         }
     }
 
-    main {
-//        margin-left: 16%;
-    }
-
     @media (min-width: 460px) {
         .content {
             padding: 1.5em 1%;
@@ -666,7 +664,7 @@ footer {
         .content {
             padding: 1.5em 1%;
             float: right;
-            width: 83%;
+            width: 81%;
             position: relative;
         }
 
@@ -682,7 +680,8 @@ footer {
         .left-nav {
             height: 100vh;
 
-            width: 14.6666667%;
+            $width: 17%;
+            width: $width;
 
             color: $white;
             background: $dark-blue;
@@ -695,7 +694,7 @@ footer {
             transform: translate(0, 0);
 
             &.open {
-                width: 14.6666667%;
+                width: $width;
                 -webkit-transform: translate(0, 0);
                 transform: translate(0, 0);
             }

@@ -77,3 +77,25 @@
         }
     }
 }
+
+.dropit.pop-north {
+    margin: 0;
+
+    .dropit-submenu {
+        bottom: 0;
+        top: inherit;
+        min-width: 150px;
+        right: -75px;
+    }
+}
+
+.dropit.pop-north .dropit-open .dropit-submenu {
+    &:after {
+        bottom: -8px;
+        top: inherit;
+        right: 85px;
+        border-width: 8px 8px 0;
+    }
+
+
+}
