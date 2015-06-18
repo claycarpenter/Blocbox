@@ -71,6 +71,10 @@ p {
     margin: 0 2% 20px;
 }
 
+.page-section {
+    padding: 1em 0;
+}
+
 header {
     $header-bg: $dark-blue;
     $header-text: $white;
@@ -84,11 +88,16 @@ header {
     nav {
         padding: 1em 0;
 
+        .one-half {
+            width: 46%;
+        }
+
         ul {
             display: inline;
             text-align: right;
             float: right;
             margin: 0;
+            padding: 0;
 
             & > li {
                 list-style-type: none;
@@ -124,13 +133,13 @@ header {
     position: relative;
 
     h1 {
-        font-size: 48px;
+        font-size: 30px;
         font-weight: normal;
-        margin: 95px 0 0;
+        margin: 10px 0 0;
     }
 
     p {
-        font-size: 22px;
+        font-size: 20px;
         line-height: 26px;
         font-weight: 100;
         margin: 10px 0 40px;
@@ -139,6 +148,9 @@ header {
     img {
         display: block;
         margin: 3em auto 0;
+        height: auto;
+        width: 80%;
+        max-width: 654px;
     }
 }
 
@@ -162,10 +174,10 @@ header {
     text-align: center;
     display: block;
     position: relative;
+    padding-top: 2em;
 
     ul {
         margin: 0 auto;
-        padding: 4em 0;
 
         li {
             list-style-type: none;
@@ -185,13 +197,14 @@ header {
     }
 }
 
+$pricing-box-height: 380px;
+
 .pricing {
     background:
         url('../images/pricing-background.png') top center no-repeat,
         linear-gradient(206deg, #5F81A3 0%, $dark-blue 94%);
     background-size: cover;
     text-align: center;
-    padding: 4em 0;
 
     h2, p {
         color: $white;
@@ -210,12 +223,12 @@ header {
         padding: 0 15px 15px;
         background: $white;
         box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);
-        min-height: 439px;
+        min-height: $pricing-box-height;
         position: relative;
-        margin-top: 25px;
+        margin: 0;
 
         &.middle {
-            min-height: 485px;
+            min-height: $pricing-box-height + 50;
             margin-top: 0px;
         }
 
@@ -225,9 +238,6 @@ header {
             text-transform: uppercase;
             background: #E2E2E2;
             box-shadow: 0 1px 2px 0 rgba(0,0,0,0.4);
-//            left: 0;
-//            right: 0;
-//            top: 0;
             text-align: center;
             margin: 0 -15px 40px;
             padding: 10px 0;
@@ -274,7 +284,6 @@ header {
 }
 
 .testimonials {
-    padding: 4em 0;
     text-align: center;
 
     h2 {
@@ -349,15 +358,18 @@ footer {
         font-weight: 100;
         text-align: center;
         margin: 10px auto 0;
-        // padding: 0;
+        padding: 0;
+    }
+
+    nav ul {
+        margin-top: 0;
+        margin-bottom: 10px;
     }
 
     nav ul li {
         list-style-type: none;
-        display: inline;
-
         display: inline-block;
-        margin: 0 .3em;
+        margin: 0 .3em 0 .1em;
 
         a {
             color: $white;
@@ -397,6 +409,32 @@ footer {
 
     .one-fourth {
         width: 21%;
+    }
+
+    .page-section {
+        padding: 4em 0;
+    }
+
+    .hero {
+        h1 {
+            font-size: 48px;
+            margin: 60px 0 0;
+        }
+
+        p {
+            font-size: 20px;
+        }
+    }
+
+    .pricing {
+        .box {
+            margin-top: 25px;
+            min-height: $pricing-box-height + 50;
+
+            &.middle {
+                min-height: $pricing-box-height + 100;
+            }
+        }
     }
 
     footer {
