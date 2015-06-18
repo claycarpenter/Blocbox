@@ -80,7 +80,11 @@ gulp.task('watch', function() {
     gulp.watch(projectPaths.sources.jade, ['jade-compile']);
 
     gulp.watch(
-        [projectPaths.sources.html, projectPaths.sources.images],
+        [   projectPaths.sources.html,
+            projectPaths.sources.images,
+            projectPaths.sources.scripts,
+            projectPaths.sources.fonts
+        ],
         ['copy-static']);
 });
 
