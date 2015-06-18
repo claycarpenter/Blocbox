@@ -483,6 +483,15 @@ footer {
                             margin-right: 8px;
                         }
                     }
+
+                    &.active a {
+                        background-color: $white;
+                        color: $dark-blue;
+                        padding: 2px 5px;
+                        position: relative;
+                        left: -5px;
+                        border-radius: 4px;
+                    }
                 }
             }
         }
