@@ -60,7 +60,22 @@ html(lang='en-us')
                 .container
                     .header
                         h1 All Items
-                        a.btn(href='#') + Add
+                        ul.menu
+                            li
+                                a.btn(href='#') + Add
+                                ul
+                                    li
+                                        a(href='#')
+                                            i.fa.fa-file-o
+                                            | Note
+                                    li
+                                        a(href='#')
+                                            i.fa.fa-picture-o
+                                            | Image
+                                    li
+                                        a(href='#')
+                                            i.fa.fa-link
+                                            | Link
 
                 // Content container
                 .container
@@ -132,4 +147,5 @@ html(lang='en-us')
 
         script(src='js/vendor/jquery-2.1.4.js')
         script(src='js/vendor/dropit.js')
+        script(src='js/app.js')
 
