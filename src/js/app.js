@@ -4,7 +4,6 @@ $(document).ready(function () {
 
     // Small-screen nav menu.
     $('#smallNav').click(function () {
-        console.log('up');
         $('#left-nav').toggleClass('open', 200);
     });
 });
