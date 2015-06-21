@@ -1,0 +1,101 @@
+/*
+ * Dropit v1.1.0
+ * http://dev7studios.com/dropit
+ *
+ * Copyright 2012, Dev7studios
+ * Free to use and abuse under the MIT license.
+ * http://www.opensource.org/licenses/mit-license.php
+ */
+
+/* These styles assume you are using ul and li */
+.dropit {
+    list-style: none;
+    padding: 0;
+    margin: 15px 0 0;
+    float: right;
+    display: inline-block;
+}
+
+.dropit .dropit-trigger {
+    position: relative;
+}
+
+.dropit .dropit-submenu {
+    position: absolute;
+    top: 100%;
+    right: 0; /* dropdown left or right */
+    z-index: 1000;
+    display: none;
+    min-width: 80px;
+    list-style: none;
+    padding: 20px;
+    margin: 20px 0 0;
+}
+.dropit .dropit-open .dropit-submenu {
+    display: block;
+    background: #FFFFFF;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.30);
+    border-radius: 4px;
+
+    // Adds a small triangle to top of dropdown menu.
+    &:after {
+        content: ' ';
+        position: absolute;
+        border-style: solid;
+        border-width: 0 8px 8px;
+        border-color: #FFFFFF transparent;
+        display: block;
+        width: 0;
+        z-index: 1;
+        top: -8px;
+        right: 10px;
+    }
+
+    ul {
+        margin: 0 auto;
+    }
+
+    li {
+        display: block;
+        margin-bottom: 20px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        a {
+            color: #34495E;
+            text-decoration: none;
+            font-family: "Lato", Helvetica, Arial, sans-serif;
+            font-weight: 100;
+
+            i.fa {
+                display: inline-block;
+                width: 1.2em;
+                margin-right: .5em;
+            }
+        }
+    }
+}
+
+.dropit.pop-north {
+    margin: 0;
+
+    .dropit-submenu {
+        bottom: 0;
+        top: inherit;
+        min-width: 150px;
+        right: -75px;
+    }
+}
+
+.dropit.pop-north .dropit-open .dropit-submenu {
+    &:after {
+        bottom: -8px;
+        top: inherit;
+        right: 85px;
+        border-width: 8px 8px 0;
+    }
+
+
+}

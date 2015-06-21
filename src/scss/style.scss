@@ -2,6 +2,7 @@
 // Import vendor stylesheets.
 @import "normalize";
 @import "font-awesome";
+@import "dropit";
 
 $dark-blue: #34495E;
 $med-blue: #3498DB;
@@ -462,5 +463,284 @@ footer {
 @media (min-width: 1200px) {
     .container {
         width: 1170px;
+    }
+}
+
+.dashboard {
+    background: #F7F7F7;
+
+    .left-nav {
+        height: 100%;
+
+        width: 280px;
+
+        color: $white;
+        background: $dark-blue;
+        background-image: linear-gradient(206deg, #5F81A3 0%, #34495E 94%);
+
+        position: absolute;
+
+        transition: all 0.3s ease-in-out;
+        transform: translate(-280px, 0);
+
+        z-index: 100;
+
+        &.open {
+            display: block;
+            width: 280px;
+            transition: all 0.3s ease-in-out;
+            transform: translate(0,0);
+        }
+
+        .site-logo {
+            padding: 20px 0;
+            background: $dark-blue;
+            display: block;
+            text-align: center;
+        }
+
+        .items {
+            padding: 0 6%;
+
+            p {
+                font-weight: 600;
+                text-transform: uppercase;
+                font-size: 12px;
+                color: #E2E2E2;
+                line-height: 15px;
+            }
+
+            ul {
+                margin: 0 0 40px;
+                padding: 0;
+
+                li {
+                    list-style-type: none;
+                    margin-bottom: 15px;
+
+                    a {
+                        color: $white;
+                        text-decoration: none;
+                        font-weight: 100;
+
+                        i {
+                            width: 16px;
+                            text-align: center;
+                            margin-right: 8px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .settings {
+            position: absolute;
+            background: darken($dark-blue, 10%);
+
+            width: 100%;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 10px 0;
+
+            img {
+                height: 35px;
+                width: 35px;
+                border-radius: 50%;
+                margin-left: 10px;
+                display: inline-block;
+                float: left;
+            }
+
+            p {
+                display: inline-block;
+                float: left;
+                vertical-align: top;
+                padding-top: 8px;
+                font-weight: 400;
+                margin: 0 0 0 10px;
+            }
+
+            .settings-btn {
+                color: $white;
+                text-decoration: none;
+                text-align: right;
+                float: right;
+                margin-right: 10px;
+                margin-top: 8px;
+            }
+        }
+    }
+
+    .hamburger {
+        position: absolute;
+        z-index: 1000;
+        background: $dark-blue;
+        color: $white;
+        text-decoration: none;
+        font-size: 22px;
+        padding: 10px 15px;
+        border-radius: 4px;
+        left: 5px;
+        top: 15px;
+    }
+
+    .content {
+        padding: 6erm 1% 1.5em;
+        float: right;
+        width: 98%;
+        position: relative;
+
+        .header {
+            margin: 0 1% 20px;
+
+            h1 {
+                font-family: "Lato", Helvetica, Arial, sans-serif;
+                font-weight: 100;
+                margin: 0 0 30px;
+                font-size: 36px;
+                color: $med-blue;
+                line-height: 44px;
+                float: left;
+                display: inline-block;
+            }
+
+            > a {
+                float: right;
+            }
+        }
+    }
+
+    .content-item {
+        width: 96%;
+        margin: 0 2% 25px;
+        float: left;
+        display: block;
+    }
+
+    .item-box {
+        display: block;
+        height: 230px;
+        background: $white;
+        box-shadow: 0 1px 3px 0 rgba(0,0,0,0.40);
+        position: relative;
+        overflow: hidden;
+        padding: 20px;
+
+        > img {
+            position: absolute;
+            height: 100%;
+            width: auto;
+            top: 0;
+            left: 0;
+            right: 0;
+        }
+
+        h2 {
+            font-family: 'Lato', Helvetica, Arial, sans-serif;
+            font-weight: 700;
+            font-size: 15px;
+            line-height: 17px;
+            margin: 0;
+
+            a {
+                color: $med-blue;
+                text-decoration: none;
+            }
+
+            img {
+                width: 16px;
+                height: 16px;
+                position: relative;
+                top: 2px;
+                margin-right: 5px;
+            }
+        }
+
+        p {
+            font-size: 14px;
+            color: #333333;
+            line-height: 18px;
+            margin: 5px 0;
+        }
+    }
+
+    @media (min-width: 460px) {
+        .content {
+            padding: 1.5em 1%;
+            float: right;
+            width: 90%;
+            position: relative;
+        }
+
+        .content-item {
+            width: 46%;
+            margin: 0 2% 25px;
+            float: left;
+            display: block;
+        }
+    }
+
+    @media (min-width: 768px) {
+        .content {
+            padding: 1.5em 5%;
+            float: right;
+            width: 90%;
+            position: relative;
+        }
+
+        .content > .container {
+            width: 700px;
+        }
+
+        .content-item {
+            width: 28%;
+            margin: 0 1% 25px;
+        }
+    }
+
+    @media (min-width: 992px) {
+        .content {
+            padding: 1.5em 1%;
+            float: right;
+            width: 81%;
+            position: relative;
+        }
+
+        .content > .container {
+            width: auto;
+        }
+
+        .content-item {
+            width: 23%;
+            margin: 0 1% 25px;
+        }
+
+        .left-nav {
+            height: 100vh;
+
+            $width: 17%;
+            width: $width;
+
+            color: $white;
+            background: $dark-blue;
+            background-image: linear-gradient(206deg, #5F81A3 0%, #34495E 94%);
+            float: left;
+            position: fixed;
+            display: block;
+
+            -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+
+            &.open {
+                width: $width;
+                -webkit-transform: translate(0, 0);
+                transform: translate(0, 0);
+            }
+        }
+
+        .hamburger {
+            display: none;
+        }
     }
 }

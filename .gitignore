@@ -1,5 +1,6 @@
 # OSX metadata.
 .DS_Store
+Icon
 
 # Local node modules
 node_modules

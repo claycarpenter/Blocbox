@@ -17,20 +17,20 @@ html(lang='en-us')
         header
             nav.container
                 .one-half
-                    a.site-logo(href='index.html')
+                    a.site-logo(href='#')
                         img(src='images/site-logo.png', alt='Blocbox')
                 .one-half
                     ul
                         li
-                            a(href='signin.html') Sign In
+                            a(href='#') Sign In
                         li.btn-outline
-                            a(href='signup.html') Sign Up
+                            a(href='#') Sign Up
             .container.hero
                 h1 Save, share and collaborate.
                 // This next block might benefit from using white-space:pre
                 // See: http://stackoverflow.com/a/6752736
                 p blocbox lets you collect and sort information.<br/>Create simple notes, store images, and add links.
-                a.btn(href='signup.html') Start Your Free Trial!
+                a.btn(href='#') Start Your Free Trial!
                 img(src='images/dashboard-screenshot.png', alt='Blocbox')
 
         main(role='main')
@@ -70,7 +70,7 @@ html(lang='en-us')
                       li
                         strong 2GB
                         |  of storage
-                    a.btn(href='signup.html') Start Your Free Trial!
+                    a.btn(href='#') Start Your Free Trial!
                 li.one-third
                   .box.middle
                     h3 Professional
@@ -85,7 +85,7 @@ html(lang='en-us')
                         strong 5GB
                         |  of storage
                       li Real-time collaboration
-                    a.btn(href='signup.html') Start Your Free Trial!
+                    a.btn(href='#') Start Your Free Trial!
                 li.one-third
                   .box
                     h3 Expert
@@ -100,7 +100,7 @@ html(lang='en-us')
                         strong Unlimited
                         |  storage
                       li Real-time collaboration
-                    a.btn(href='signup.html') Start Your Free Trial!
+                    a.btn(href='#') Start Your Free Trial!
               .container
                 p.small
                     | *We will not collect your credit card information until your 30-day trial has ended.
@@ -169,3 +169,7 @@ html(lang='en-us')
 
                 .right-footer-block.one-third
                     img.logo(src='images/site-logo.png', alt='Blocbox')
+
+        script(src='js/vendor/jquery-2.1.4.js')
+        script(src='js/vendor/dropit.js')
+        script(src='js/app.js')
